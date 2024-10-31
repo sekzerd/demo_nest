@@ -3,6 +3,8 @@ import { AppController } from '@/app.controller';
 import { AppService } from '@/app.service';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from '@/entity/users';
+import { UsersModule } from '@/module/users';
 
 @Module({
   imports: [
@@ -13,9 +15,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'hellolinux',
       database: 'test',
-      entities: [],
+      entities: [User],
       synchronize: true,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
