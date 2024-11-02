@@ -4,6 +4,7 @@ import {
   FastifyAdapter,
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
+
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
@@ -11,4 +12,5 @@ async function bootstrap() {
   );
   await app.listen(3000);
 }
+
 bootstrap();
